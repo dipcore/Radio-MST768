@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_title_ui_radio_interface">
+        <com.dipcore.radio.ui.DynamicSummaryListPreference
+            android:key="pref_key_ui_background"
+            android:title="@string/pref_title_ui_background"
+            android:summary="%s"
+            android:defaultValue="abstract1"
+            android:entries="@array/pref_title_ui_background_titles"
+            android:entryValues="@array/pref_title_ui_background_values" />
+        <com.dipcore.radio.ui.DynamicSummaryListPreference
+            android:key="pref_key_ui_grid_view"
+            android:title="@string/pref_title_ui_grid_view"
+            android:summary="%s"
+            android:defaultValue="2x4"
+            android:entries="@array/pref_title_ui_grid_view_titles"
+            android:entryValues="@array/pref_title_ui_grid_view_values" />
+        <com.dipcore.radio.ui.SeekBarPreference
+            android:key="pref_title_ui_grid_view_font_size"
+            android:title="@string/pref_title_ui_grid_view_font_size"
+            android:summary="%s"
+            android:max="40"
+            android:defaultValue="20" />
+
+        <SwitchPreference
+            android:key="pref_key_ui_display_freq_bar"
+            android:title="@string/pref_title_ui_freq_bar_visibility"
+            android:summary="@string/pref_title_ui_freq_bar_visibility_summary"
+            android:defaultValue="true"
+            />
+
+        <SwitchPreference
+            android:key="pref_key_radio_enable_toggle_full_view"
+            android:title="@string/pref_title_ui_toggle_full_view"
+            android:summary="@string/pref_title_ui_toggle_full_view_summary"
+            android:defaultValue="false"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_ui_top_bar_notifications">
+        <SwitchPreference
+            android:key="pref_key_ui_display_top_bar_notification"
+            android:title="@string/pref_title_ui_display_top_bar_notification"
+            android:summary="@string/pref_title_ui_display_top_bar_notification_summary"
+            android:defaultValue="true"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_ui_toast_notifications">
+        <SwitchPreference
+            android:key="pref_key_ui_display_station_info_toasts"
+            android:title="@string/pref_title_ui_display_toasts"
+            android:defaultValue="true"
+            />
+        <com.dipcore.radio.ui.DynamicSummaryListPreference
+            android:key="pref_key_ui_station_info_toasts_position"
+            android:title="@string/pref_title_ui_station_info_toasts_position"
+            android:summary="%s"
+            android:defaultValue="top_center"
+            android:entries="@array/pref_title_ui_station_info_toasts_position_titles"
+            android:entryValues="@array/pref_title_ui_station_info_toasts_position_values"
+            android:dependency="pref_key_ui_display_station_info_toasts" />
+        <com.dipcore.radio.ui.DynamicSummaryListPreference
+            android:key="pref_key_ui_station_info_toasts_duration"
+            android:title="@string/pref_title_ui_station_info_toasts_duration"
+            android:summary="%s"
+            android:defaultValue="long"
+            android:entries="@array/pref_title_ui_station_info_toasts_duration_titles"
+            android:entryValues="@array/pref_title_ui_station_info_toasts_duration_values"
+            android:dependency="pref_key_ui_display_station_info_toasts" />
+        <com.dipcore.radio.ui.SeekBarPreference
+            android:key="pref_key_ui_station_info_toasts_transparency"
+            android:title="@string/pref_title_ui_station_info_toasts_transparency"
+            android:summary="%s"
+            android:defaultValue="15"
+            android:dependency="pref_key_ui_display_station_info_toasts" />
+    </PreferenceCategory>
+</PreferenceScreen>

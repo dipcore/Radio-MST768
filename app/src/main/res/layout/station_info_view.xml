@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:minHeight="250dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/linearLayout">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/nameIcon"
+            android:src="@drawable/ic_name"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="Station name"
+            android:id="@+id/nameValue"
+            android:lines="1"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+            android:textColor="#005db4"
+            android:paddingRight="10dp"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView4"
+            android:src="@drawable/ic_wave"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="000.00"
+            android:id="@+id/freqValue"
+            android:textIsSelectable="false"
+            android:lines="1"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+            android:gravity="center"
+            android:paddingRight="10dp" />
+
+        <TextView
+            style="@style/freqRangeUnitsText"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/unitsValue"
+            android:text="MHz"
+            android:gravity="center" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView5"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/ptyIcon"
+            android:src="@drawable/ic_collect"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="News"
+            android:id="@+id/ptyName"
+            android:textIsSelectable="false"
+            android:layout_alignBottom="@+id/textView8"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainTextLayout">
+
+        <TextView
+            android:id="@+id/mainText"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:textSize="75dp"
+            android:gravity="center"
+            android:lines="1"
+            android:textIsSelectable="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="000.00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout2"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rds_st"
+            android:id="@+id/st"
+            android:textSize="16dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            style="@style/freqRangeUnitsText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rds_ta"
+            android:id="@+id/ta"
+            android:textSize="16dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            style="@style/freqRangeUnitsText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rds_tp"
+            android:id="@+id/tp"
+            android:textSize="16dp"
+            android:paddingRight="4dp"
+            android:paddingLeft="4dp"
+            style="@style/freqRangeUnitsText" />
+
+    </LinearLayout>
+
+</RelativeLayout>

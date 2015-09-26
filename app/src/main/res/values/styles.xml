@@ -1,0 +1,100 @@
+<resources>
+
+    <style name="AppTheme" parent="@android:style/Theme.Holo">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:screenOrientation">landscape</item>
+        <item name="android:textSize">@dimen/text_size</item>
+
+        <item name="android:listPreferredItemHeightSmall">60dp</item>
+        <item name="android:listPreferredItemPaddingLeft">5dp</item>
+        <item name="android:listPreferredItemPaddingRight">5dp</item>
+
+    </style>
+
+    <style name="wallpaper_bg" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
+
+    <style name="transparentButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">20dp</item>
+    </style>
+
+    <style name="navButton">
+        <item name="android:textSize">50dp</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="bottomBar">
+        <item name="android:background">@drawable/bottom_bar</item>
+    </style>
+
+    <style name="topBar">
+        <item name="android:background">@drawable/top_bar</item>
+    </style>
+
+    <style name="toggleBar">
+        <item name="android:background">@drawable/toggle_bar</item>
+    </style>
+
+    <style name="stationListBar">
+        <item name="android:background">@drawable/station_list_bar</item>
+    </style>
+
+    <style name="toggleButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/toggle_btn</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:drawableLeft">@drawable/toggle_indicator</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="freqValueText">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textSize">@dimen/freqValueTextSize</item>
+    </style>
+
+    <style name="smallRDSText">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/text_additional_color_3</item>
+        <item name="android:layout_marginBottom">-4dp</item>
+        <item name="android:layout_marginTop">-3dp</item>
+    </style>
+
+    <style name="smallRDSPSText">
+        <item name="android:textColor">@color/text_additional_color_3</item>
+        <item name="android:textSize">@dimen/text_size_md</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">-10dp</item>
+    </style>
+
+    <style name="mediumRDSMessageText">
+        <item name="android:textColor">@color/text_additional_color_3</item>
+        <item name="android:textSize">@dimen/text_size_md</item>
+    </style>
+
+    <style name="smallRDSPTYText">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/text_additional_color_3</item>
+    </style>
+
+    <style name="freqRangeUnitsText">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/text_additional_color_2</item>
+    </style>
+
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="horizontal"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+    android:background="#000"
+    android:id="@+id/toastBox"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+<ImageView android:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000.00"
+        android:id="@+id/topTextView"
+        android:textIsSelectable="false"
+        android:gravity="center"
+        android:lines="1"
+        android:textSize="48dp" />
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="60dp"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|left"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="8dp">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PTYName"
+        android:text="News"
+        style="@style/smallRDSPTYText"
+        android:gravity="center_vertical|left"
+        android:lines="1"
+        android:width="60dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/freqRangeUtits"
+        style="@style/freqRangeUnitsText"
+        android:text="MHz"
+        android:gravity="center_vertical|left"
+        android:lines="1"
+        android:width="60dp" />
+
+</LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_radio_region_list_titles">
+        <item>중국</item>
+        <item>유럽</item>
+        <item>미국</item>
+        <item>동남아시아</item>
+        <item>남아메리카</item>
+        <item>동유럽</item>
+        <item>일본</item>
+    </string-array>
+    <string-array name="pref_radio_region_list_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="pref_title_ui_background_titles">
+        <item>기본배경 1</item>
+        <item>기본배경 2</item>
+        <item>기본배경 3</item>
+        <item>배경화면 선택 (재시작 필요)</item>
+        <item>색상 지정</item>
+        <item>사용자 지정사진</item>
+    </string-array>
+    <string-array name="pref_title_ui_background_values">
+        <item>abstract1</item>
+        <item>abstract2</item>
+        <item>abstract3</item>
+        <item>$$wallpaper</item>
+        <item>$$solid</item>
+        <item>$$custom</item>
+    </string-array>
+    <string-array name="pref_title_ui_grid_view_titles">
+        <item>Grid 2x3</item>
+        <item>Grid 2x4</item>
+        <item>Grid 2x5</item>
+        <item>Grid 3x3</item>
+        <item>Grid 3x4</item>
+        <item>Grid 3x5</item>
+    </string-array>
+    <string-array name="pref_title_ui_grid_view_values">
+        <item>2x3</item>
+        <item>2x4</item>
+        <item>2x5</item>
+        <item>3x3</item>
+        <item>3x4</item>
+        <item>3x5</item>
+    </string-array>
+    <string-array name="pref_title_ui_station_info_toasts_duration_titles">
+        <item>길게</item>
+        <item>짧게</item>
+    </string-array>
+    <string-array name="pref_title_ui_station_info_toasts_duration_values">
+        <item>long</item>
+        <item>short</item>
+    </string-array>
+    <string-array name="pref_title_ui_station_info_toasts_position_titles">
+        <item>상단</item>
+        <item>중간</item>
+        <item>하단</item>
+    </string-array>
+    <string-array name="pref_title_ui_station_info_toasts_position_values">
+        <item>top_center</item>
+        <item>middle_center</item>
+        <item>bottom_center</item>
+    </string-array>
+</resources>

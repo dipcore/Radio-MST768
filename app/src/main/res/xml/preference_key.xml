@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/pref_title_key_navigation_keys">
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_next_station"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_next_station"
+            android:defaultValue="19" />
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_prev_station"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_prev_station"
+            android:defaultValue="21" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_key_numeric_keys">
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_1"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_station_1"
+            android:defaultValue="49" />
+
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_2"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_station_2"
+            android:defaultValue="50" />
+
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_3"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_station_3"
+            android:defaultValue="51" />
+
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_4"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_station_4"
+            android:defaultValue="52" />
+
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_5"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_station_5"
+            android:defaultValue="53" />
+
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_6"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_station_6"
+            android:defaultValue="54" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

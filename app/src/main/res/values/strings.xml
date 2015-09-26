@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Radio</string>
+
+    <string name="about_application">About radio</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="home_btn">Home</string>
+    <string name="more_btn">More</string>
+    <string name="dx_btn">DX</string>
+    <string name="loc_btn">LOC</string>
+    <string name="equalizer_btn">Equalizer</string>
+    <string name="back_btn">Back</string>
+
+    <string name="next_station_btn">&#xf3d3;</string>
+    <string name="prev_station_btn">&#xf3d2;</string>
+
+    <string name="fm_mode_btn">FM</string>
+    <string name="am_mode_btn">AM</string>
+    <string name="fav_mode_btn">FAV</string>
+
+    <string name="reg_toggle_btn">REG</string>
+    <string name="ta_toggle_btn">TA</string>
+    <string name="af_toggle_btn">AF</string>
+    <string name="pty_toggle_btn">PTY</string>
+
+    <string name="rds_tp">TP</string>
+    <string name="rds_ta">TA</string>
+    <string name="rds_st">ST</string>
+
+    <string name="add_station">Add station</string>
+    <string name="auto_scan">Auto scan</string>
+    <string name="clear_list">Clear list</string>
+    <string name="save_station_list">Save list</string>
+    <string name="restore_station_list">Restore list</string>
+
+    <string name="select_color">Select color</string>
+
+    <string name="icon_star">&#xf2fc;</string>
+
+
+    <string name="station_dialog_label_station_freq">Frequency</string>
+    <string name="station_dialog_hint_station_freq">Enter station frequency</string>
+    <string name="station_dialog_label_station_name">Name</string>
+    <string name="station_dialog_hint_station_name">Enter station name</string>
+    <string name="station_dialog_label_favorite">Favorite station</string>
+
+    <string name="save_station_list_dialog_title">Save station list</string>
+    <string name="save_station_file_name_hint">Enter file name</string>
+    <string name="alert_supply_filename">Please enter file name</string>
+    <string name="alert_bad_filename_chars">Only alpha-numeric names are allowed</string>
+    <string name="alert_file_exists">File already exists</string>
+
+    <string name="restore_station_list_dialog_title">Restore station list</string>
+    <string name="restore_station_list_default_dir">/mnt/sdcard</string>
+
+    <string name="edit_station_dialog_title">Edit station</string>
+    <string name="add_station_dialog_title">Add station</string>
+
+    <string name="alert_ok">Ok</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="alert_close">Close</string>
+    <string name="alert_save">Save</string>
+    <string name="alert_delete">Delete</string>
+
+    <string name="widget_freq_text">000.00</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="station_exists_message">Station already exists!</string>
+
+
+</resources>

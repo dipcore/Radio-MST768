@@ -1,0 +1,216 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/main">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        style="@style/topBar"
+        android:id="@+id/stationInfoBar"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:gravity="center_vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/prevButton"
+            android:layout_gravity="center_vertical"
+            style="@style/navButton"
+            android:onClick="onPrevStationBtnClick"
+            android:background="@drawable/ic_prev"
+            android:maxHeight="50dp" />
+
+        <com.dipcore.radio.ui.StationInfoView
+            android:id="@+id/stationInfoView"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/nextButton"
+            android:layout_gravity="center_vertical"
+            style="@style/navButton"
+            android:onClick="onNextStationBtnClick"
+            android:background="@drawable/ic_next"
+            android:maxHeight="150dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:id="@+id/freqBarLayout">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/rdsMessageTextView"
+            android:gravity="center|bottom"
+            android:layout_alignParentBottom="true"
+            style="@style/mediumRDSMessageText"
+            android:maxLines="1"
+            android:scrollbars = "vertical"/>
+
+        <com.dipcore.radio.ui.FreqBarView
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/freqBar" />
+
+    </RelativeLayout>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/toggleBar"
+        android:id="@+id/toggleBar">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.4"
+            android:id="@+id/modeSwitch"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/fm_mode_btn"
+                android:id="@+id/fmMode"
+                android:singleLine="false"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onFMRadioBtnClicked" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/am_mode_btn"
+                android:id="@+id/amMode"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onAMRadioBtnClicked" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/fav_mode_btn"
+                android:id="@+id/favMode"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onFAVRadioBtnClicked" />
+        </RadioGroup>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/reg_toggle_btn"
+                android:id="@+id/regToggleBtn"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onREGBtnClick" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/ta_toggle_btn"
+                android:id="@+id/taToggleBtn"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onTABtnClick" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/af_toggle_btn"
+                android:id="@+id/afToggleBtn"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onAFBtnClick" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/dx_btn"
+                android:id="@+id/locToggleBtn"
+                style="@style/toggleButton"
+                android:checked="false"
+                android:onClick="onLOCBtnClick"
+                android:width="110dp" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <com.dipcore.radio.ui.StationListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/stationListView"
+        android:layout_weight="0.8"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/bottomBar"
+        android:id="@+id/bottomBar"
+        android:baselineAligned="false"
+        android:longClickable="false">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/home_btn"
+            android:id="@+id/homeBtn"
+            style="@style/transparentButton"
+            android:onClick="onHomeBtnClicked" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/more_btn"
+            android:id="@+id/moreBtn"
+            style="@style/transparentButton"
+            android:onClick="onMoreBtnClicked" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/equalizer_btn"
+            android:id="@+id/equalizerBtn"
+            style="@style/transparentButton"
+            android:onClick="onEqualizerBtnClicked" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="@string/back_btn"
+            android:id="@+id/backBtn"
+            style="@style/transparentButton"
+            android:onClick="onBackBtnClicked" />
+    </LinearLayout>
+
+</LinearLayout>

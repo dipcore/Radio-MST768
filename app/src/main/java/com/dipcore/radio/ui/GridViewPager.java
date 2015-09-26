@@ -1,0 +1,465 @@
+package com.dipcore.radio.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+
+import com.dipcore.radio.Station;
+
+
+public class GridViewPager extends ViewPager {
+
+    private List<BGGridView> mGridViewList = null;
+
+    private static final int DEFAULT_COLUMN_NUMBER = 2;
+    private static final int DEFAULT_ROW_NUMBER = 3;
+
+    private int mRowNumber = 0;
+    private int mColumnNumber = 0;
+
+    private float mCellMinWidth = 0;
+    private float mCellMinHeight = 0;
+    private float mColumnMargin = 0;
+    private float mRowMargin = 0;
+
+    private BaseAdapter mAdapter;
+
+    private View mEmptyView = null;
+
+    private int mPaddingLeft = 0;
+    private int mPaddingRight = 0;
+
+    private int mSelection = -1;
+    private boolean applySelection = false;
+
+    public GridViewPager(Context context) {
+        this(context, null);
+    }
+
+    public GridViewPager(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        /*
+        if(attrs != null){
+            TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.GridViewPager);
+            final int N = a.getIndexCount();
+            for (int i = 0; i < N; i++) {
+                int attr = a.getIndex(i);
+                if (attr == R.styleable.GridViewPager_gvpColumnNumber) {
+                    mColumnNumber = a.getInt(attr, -1);
+                } else if (attr == R.styleable.GridViewPager_gvpRowNumber) {
+                    mRowNumber = a.getInt(attr, -1);
+                } else if (attr == R.styleable.GridViewPager_gvpColumnMargin) {
+                    mColumnMargin = a.getDimension(attr, 0);
+                } else if (attr == R.styleable.GridViewPager_gvpRowMargin) {
+                    mRowMargin = a.getDimension(attr, 0);
+                } else if (attr == R.styleable.GridViewPager_gvpMinCellWidth) {
+                    mCellMinWidth = a.getDimension(attr, -1);
+                } else if (attr == R.styleable.GridViewPager_gvpMinCellHeight) {
+                    mCellMinHeight = a.getDimension(attr, -1);
+                } else if (attr == R.styleable.GridViewPager_android_padding) {
+                    int padding = a.getDimensionPixelSize(attr, 0);
+                    setPadding(padding, padding, padding, padding);
+                } else if (attr == R.styleable.GridViewPager_android_paddingLeft) {
+                    mPaddingLeft = a.getDimensionPixelSize(attr, 0);
+                } else if (attr == R.styleable.GridViewPager_android_paddingRight) {
+                    mPaddingRight = a.getDimensionPixelSize(attr, 0);
+                }
+            }
+            if(mColumnNumber <=0 && mCellMinWidth <= 0){
+                mColumnNumber = DEFAULT_COLUMN_NUMBER;
+            }
+
+            if(mRowNumber <=0 && mCellMinHeight <= 0){
+                mRowNumber = DEFAULT_ROW_NUMBER;
+            }
+            a.recycle();
+        }
+        */
+        init();
+    }
+
+    private void init(){
+        mGridViewList = new ArrayList<BGGridView>();
+    }
+
+    @Override
+    public void setPadding(int left, int top, int right, int bottom) {
+        mPaddingLeft = left;
+        mPaddingRight = right;
+        super.setPadding(0, top, 0, bottom);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int columnNumberOld = mColumnNumber;
+        int rowNumberOld = mRowNumber;
+        if (mCellMinWidth > 0) {
+            mColumnNumber = (int) Math
+                    .floor((MeasureSpec.getSize(widthMeasureSpec)
+                            + mColumnMargin - mPaddingLeft - mPaddingRight)
+                            / (mCellMinWidth + mColumnMargin));
+        }
+        if(mCellMinHeight > 0){
+            mRowNumber = (int) Math
+                    .floor((MeasureSpec.getSize(heightMeasureSpec)
+                            + mRowMargin)
+                            / (mCellMinHeight + mRowMargin));
+        }
+        if(rowNumberOld != mRowNumber || columnNumberOld != mColumnNumber){
+            resetAdapter();
+        }
+    }
+
+    public int getPageCount(){
+        return mGridViewList.size();
+    }
+
+    public int getPageSize(){
+        return mColumnNumber*mRowNumber;
+    }
+
+    public void setSelection() {
+        if (mSelection >= 0) {
+            setItemSelection(mSelection, false);
+        }
+        mSelection = -1;
+    }
+
+    public void setSelection(int position) {
+            final int pageSize = getPageSize();
+            if (mAdapter == null || pageSize <= 0) {
+                mSelection = position;
+                applySelection = true;
+                return;
+            }
+
+            ///
+            setItemSelection(position, true); // Select new
+
+            if (position != mSelection) {
+                setItemSelection(mSelection, false); // Deselect old
+                mSelection = position;
+            }
+            applySelection = false;
+            ///
+
+        if (position > -1)
+            setCurrentItem(position / pageSize, true);
+    }
+
+    private void setItemSelection(int position, boolean flag) {
+        if (mAdapter != null && position >= 0 && position < mAdapter.getCount()) {
+            final int pageSize = getPageSize();
+            int page = position / pageSize;
+            if (getPageCount() > 0) {
+                BGGridView item = mGridViewList.get(page);
+                item.setSelection(position - page * pageSize, flag);
+            }
+        }
+    }
+
+    public int getSelection(){
+        return mSelection;
+        // return getCurrentItem() * getPageSize();
+    }
+
+    public void setRowNumber(int mRowNumber) {
+        this.mRowNumber = mRowNumber;
+    }
+
+    public void setColumnNumber(int mColumnNumber) {
+        this.mColumnNumber = mColumnNumber;
+    }
+
+    public void setColumnMargin(float mColumnMargin) {
+        this.mColumnMargin = mColumnMargin;
+    }
+
+    public void setRowMargin(float mRowMargin) {
+        this.mRowMargin = mRowMargin;
+    }
+
+    public void setPadding(int padding) {
+        setPadding(padding, padding, padding, padding);
+    }
+
+
+
+    @Override
+    public Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("instanceState", super.onSaveInstanceState());
+        bundle.putInt("selection", getSelection());
+        return bundle;
+    }
+
+    @Override
+    public void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            this.mSelection = bundle.getInt("selection");
+            this.applySelection = bundle.getBoolean("applySelection");
+            state = bundle.getParcelable("instanceState");
+        }
+        super.onRestoreInstanceState(state);
+    }
+
+    public void setEmptyView(TextView emptyView) {
+        mEmptyView = emptyView;
+    }
+
+    public void setAdapter(BaseAdapter adapter){
+        mAdapter = adapter;
+        resetAdapter();
+    }
+
+    public void notifyDataSetChanged(){
+        resetAdapter();
+    }
+
+    public void refresh(){
+        mGridViewList.removeAll(mGridViewList);
+        resetAdapter();
+    }
+
+    private void resetAdapter() {
+        int pageSize = mColumnNumber*mRowNumber;
+        if(pageSize <= 0)
+            return;
+
+        if(mAdapter.getCount() == 0){
+            mGridViewList.removeAll(mGridViewList);
+            if(mEmptyView != null)
+                mEmptyView.setVisibility(View.VISIBLE);
+        }else{
+            if(mEmptyView != null)
+                mEmptyView.setVisibility(View.GONE);
+        }
+        int pageCount = mAdapter.getCount()/pageSize;
+        if(mAdapter.getCount()%pageSize == 0){
+            pageCount--;
+        }
+        int listSize = mGridViewList.size()-1;
+        BGGridView gridView;
+        GridAdapter gridAdapter;
+        for(int i=0;i<=Math.max(listSize, pageCount);i++){
+            if(i<=listSize&&i<=pageCount){
+                gridView = mGridViewList.get(i);
+                gridAdapter = new GridAdapter(i,pageSize,mAdapter);
+                gridView.setAdapter(gridAdapter);
+                mGridViewList.set(i, gridView);
+                continue;
+            }
+            if(i>listSize&&i<=pageCount){
+                gridView = new BGGridView();
+                gridAdapter = new GridAdapter(i,pageSize,mAdapter);
+                gridView.setAdapter(gridAdapter);
+                mGridViewList.add(gridView);
+                continue;
+            }
+            if(i>pageCount&&i<=listSize){
+                mGridViewList.remove(pageCount+1);
+                continue;
+            }
+        }
+        super.setAdapter(new GridPagerAdapter());
+        if(applySelection)
+            setSelection(mSelection);
+    }
+
+    private class GridPagerAdapter extends PagerAdapter {
+
+        @Override
+        public int getCount() {
+            return mGridViewList.size();
+        }
+
+        @Override
+        public boolean isViewFromObject(View arg0, Object arg1) {
+            return arg0 == arg1;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView((View)object);
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            container.addView(mGridViewList.get(position),new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+            return mGridViewList.get(position);
+        }
+    }
+
+    private class GridAdapter extends BaseAdapter{
+        int mPage;
+        int mSize;
+        BaseAdapter mAdapter;
+        public GridAdapter(int page,int size,BaseAdapter adapter){
+            mPage = page;
+            mSize = size;
+            mAdapter = adapter;
+        }
+        @Override
+        public int getCount() {
+            if(mAdapter.getCount()%mSize==0)
+                return mSize;
+            else if(mPage < mAdapter.getCount()/mSize){
+                return mSize;
+            }else{
+                return mAdapter.getCount()%mSize;
+            }
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return mAdapter.getItem(mPage*mSize+position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return mAdapter.getItemId(mPage*mSize+position);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            return mAdapter.getView(mPage*mSize+position, convertView, parent);
+        }
+
+    }
+
+    public class BGGridView extends AdapterView<ListAdapter> {
+
+        private ListAdapter mAdapter;
+
+        public BGGridView() {
+            super(GridViewPager.this.getContext());
+        }
+
+        /**
+         * AdapterView
+         *  getAdapter()
+         *  setAdapter(ListAdapter adapter)
+         *  getSelectedView()
+         *  setSelection(int position)
+         */
+        @Override
+        public ListAdapter getAdapter() {
+            return mAdapter;
+        }
+
+        @Override
+        public void setAdapter(ListAdapter adapter) {
+            this.mAdapter = adapter;
+            int oldChildCount = getChildCount();
+            int newChildCount = mAdapter.getCount();
+
+            for(int i=0 ; i<oldChildCount && i<newChildCount; i++){
+                mAdapter.getView(i,getChildAt(i),this);
+            }
+            for(int i = oldChildCount; i<newChildCount ; i++){
+                View child = mAdapter.getView(i,null,this);
+                addViewInLayout(child,i,new LayoutParams(0, 0));
+            }
+            int d = oldChildCount - newChildCount;
+            if(d > 0){
+                removeViewsInLayout(newChildCount, d);
+            }
+        }
+
+        @Override
+        public View getSelectedView() {
+            if(getChildCount()>0){
+                return getChildAt(0);
+            }
+            return null;
+        }
+
+        @Override
+        public void setSelection(int position) {
+            setSelection(position, true);
+        }
+
+        public void setSelection(int position, boolean flag) {
+                View v = getChildAt(position);
+                if (v != null)
+                        v.setSelected(flag);
+        }
+
+        @Override
+        public int getPaddingLeft() {
+            return mPaddingLeft;
+        }
+
+        @Override
+        public int getPaddingRight() {
+            return mPaddingRight;
+        }
+
+        /**
+         *
+         */
+        @Override
+        protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+            int childWidth = (int)(MeasureSpec.getSize(widthMeasureSpec)-mColumnMargin*(mColumnNumber-1)-getPaddingLeft() - getPaddingRight())/mColumnNumber;
+            int childHeight = (int)(MeasureSpec.getSize(heightMeasureSpec)-mRowMargin*(mRowNumber-1))/mRowNumber;
+            for(int i = 0;i<getChildCount();i++){
+                View child = getChildAt(i);
+                LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                lp.width = childWidth;
+                lp.height = childHeight;
+                child.measure(MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY)
+                        , MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY));
+            }
+            setMeasuredDimension(
+                    getDefaultSize(getSuggestedMinimumWidth(),widthMeasureSpec),
+                    getDefaultSize(getSuggestedMinimumHeight(),heightMeasureSpec)
+            );
+        }
+
+        /**
+         *
+         */
+        @Override
+        protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+
+            int childCount = getChildCount();
+            int pLeft = 0;
+            int pTop = getPaddingTop();
+
+
+            for (int i = 0; i < childCount && i < mColumnNumber * mRowNumber; i++) {
+                View child = getChildAt(i);
+                int x = i % mColumnNumber;
+                if(x == 0){
+                    pLeft = getPaddingLeft();
+                }
+                LayoutParams lp = child.getLayoutParams();
+                child.layout(pLeft, pTop, pLeft + lp.width, pTop + lp.height);
+
+                pLeft += lp.width + mColumnMargin;
+                if(x == mColumnNumber-1){
+                    pTop+=lp.height + mRowMargin;
+                }
+            }
+
+        }
+
+    }
+
+}
+

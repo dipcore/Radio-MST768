@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:left="-4dp"
+                android:right="-4dp"
+                android:top="-4dp"
+                android:bottom="0dp">
+                <shape android:shape="rectangle">
+                    <stroke android:width="2dp" android:color="@color/base_color" />
+                    <solid android:color="@color/station_list_bar_bg_button_color" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:state_selected="true">
+        <layer-list>
+            <item android:left="-4dp"
+                android:right="-4dp"
+                android:top="-4dp"
+                android:bottom="0dp">
+                <shape android:shape="rectangle">
+                    <stroke android:width="2dp" android:color="@color/base_color" />
+                    <solid android:color="@color/station_list_bar_bg_button_color" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:drawable="@android:color/transparent"></item>
+
+</selector>

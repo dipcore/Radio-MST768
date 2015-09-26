@@ -1,0 +1,128 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:id="@+id/radioWidgetExtended"
+    android:background="#28010101">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topBarHeightWidget"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView8"
+            android:src="@drawable/ic_wave"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="000.00"
+            android:id="@+id/topTextView"
+            android:textIsSelectable="false"
+            android:gravity="center"
+            android:lines="1"
+            android:layout_alignBottom="@+id/freqRangeUnits"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/freqRangeUnits"
+            style="@style/freqRangeUnitsText"
+            android:text="MHz"
+            android:layout_below="@+id/PTYName"
+            android:layout_toRightOf="@+id/topTextView"
+            android:layout_toEndOf="@+id/topTextView"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="5dp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView10"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/PTYIcon"
+            android:src="@drawable/ic_collect"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="News"
+            android:id="@+id/PTYName"
+            android:textIsSelectable="false"
+            android:lines="1"
+            android:layout_alignBottom="@+id/freqRangeUnits"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:ellipsize="marquee"
+            android:layout_marginLeft="10dp"
+            android:maxLines="1"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/imageView3"
+        android:background="#28ffffff" />
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/widgetPrevStationBtn"
+            android:scaleType="fitCenter"
+            android:paddingBottom="25dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:background="@drawable/ic_prev" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/RDS_PS"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/mainTextSizeWidget"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="marquee" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/widgetNextStationBtn"
+            android:scaleType="fitCenter"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="25dp"
+            android:background="@drawable/ic_next" />
+    </LinearLayout>
+
+
+</LinearLayout>

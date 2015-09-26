@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".RadioActivity">
+    <item android:id="@+id/action_add_station" android:title="@string/add_station"
+        android:orderInCategory="100" />
+    <item android:id="@+id/action_auto_scan" android:title="@string/auto_scan"
+        android:orderInCategory="200" />
+    <item android:id="@+id/action_clear_list" android:title="@string/clear_list"
+        android:orderInCategory="300" />
+    <item android:id="@+id/action_save_station_list" android:title="@string/save_station_list"
+        android:orderInCategory="400" />
+    <item android:id="@+id/action_restore_station_list" android:title="@string/restore_station_list"
+        android:orderInCategory="500" />
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="600" />
+</menu>

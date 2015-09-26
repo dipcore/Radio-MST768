@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="divider_color">#343A3E</color>
+    <color name="base_color">#ffff0000</color>
+    <color name="text_color">#EEE</color>
+    <color name="text_additional_color">#AAA</color>
+    <color name="text_additional_color_2">#ff02e91f</color>
+    <color name="text_additional_color_3">#ff767676</color>
+    <color name="text_additional_color_4">#181818</color>
+
+    <color name="bottom_bar_border">@color/divider_color</color>
+    <color name="bottom_bar_bg_color">#DD000000</color>
+
+    <color name="top_bar_border">@color/divider_color</color>
+    <color name="top_bar_bg_color">#DD000000</color>
+
+    <color name="station_list_bar_divider">@color/divider_color</color>
+    <color name="station_list_bar_bg_color">#AA000000</color>
+    <color name="station_list_bar_bg_button_color">#DD000000</color>
+    <color name="station_list_bar_text_button_color">@color/base_color</color>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header android:fragment="com.dipcore.radio.SettingsActivity$AboutFragment"
+        android:title="@string/title_about_settings"
+        android:icon="@drawable/ic_info"/>
+
+    <header android:fragment="com.dipcore.radio.SettingsActivity$RadioSettingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/title_radio_settings" />
+
+    <header android:fragment="com.dipcore.radio.SettingsActivity$UISettingsFragment"
+        android:icon="@drawable/ic_ui"
+        android:title="@string/title_ui_settings"/>
+
+    <header android:fragment="com.dipcore.radio.SettingsActivity$KeySettingsFragment"
+        android:icon="@drawable/ic_keyboard"
+        android:title="@string/title_key_settings"/>
+
+</preference-headers>

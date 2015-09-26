@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Радио</string>
+
+    <string name="action_settings">Настройки</string>
+
+    <string name="home_btn">Домой</string>
+    <string name="more_btn">Опции</string>
+    <string name="dx_btn">DX</string>
+    <string name="loc_btn">LOC</string>
+    <string name="equalizer_btn">Эквалайзер</string>
+    <string name="back_btn">Назад</string>
+
+    <string name="next_station_btn">&#xf3d3;</string>
+    <string name="prev_station_btn">&#xf3d2;</string>
+
+    <string name="fm_mode_btn">FM</string>
+    <string name="am_mode_btn">AM</string>
+    <string name="fav_mode_btn">FAV</string>
+
+    <string name="reg_toggle_btn">REG</string>
+    <string name="ta_toggle_btn">TA</string>
+    <string name="af_toggle_btn">AF</string>
+    <string name="pty_toggle_btn">PTY</string>
+
+    <string name="rds_tp">TP</string>
+    <string name="rds_ta">TA</string>
+    <string name="rds_st">ST</string>
+
+    <string name="add_station">Добавить станцию</string>
+    <string name="auto_scan">Авто сканирование</string>
+    <string name="clear_list">Очистить список</string>
+    <string name="save_station_list">Сохранить список</string>
+    <string name="restore_station_list">Загрузить список</string>
+
+    <string name="select_color">Выбрать цвет</string>
+
+    <string name="icon_star">&#xf2fc;</string>
+
+
+    <string name="station_dialog_label_station_freq">Частота</string>
+    <string name="station_dialog_hint_station_freq">Введите частоту</string>
+    <string name="station_dialog_label_station_name">Имя</string>
+    <string name="station_dialog_hint_station_name">Введите имя</string>
+    <string name="station_dialog_label_favorite">Избранная станция</string>
+
+    <string name="save_station_list_dialog_title">Сохранить список станций</string>
+    <string name="save_station_file_name_hint">Введите имя файла</string>
+    <string name="alert_supply_filename">Введите имя файла</string>
+    <string name="alert_bad_filename_chars">Только буквенно-цифровиы названия допустимы</string>
+    <string name="alert_file_exists">Файл существует</string>
+
+    <string name="restore_station_list_dialog_title">Загрузить список станций</string>
+    <string name="restore_station_list_default_dir">/mnt/sdcard</string>
+
+    <string name="add_station_dialog_title">Добавить станцию</string>
+
+    <string name="alert_cancel">Отмена</string>
+    <string name="alert_close">Закрыть</string>
+    <string name="alert_save">Сохранить</string>
+    <string name="alert_delete">Удалить</string>
+
+    <string name="widget_freq_text">000.00</string>
+    <string name="configure">Настройки</string>
+    <string name="add_widget">Добавить виджет</string>
+    <string name="about_application">О радио</string>
+    <string name="alert_ok">Ок</string>
+    <string name="edit_station_dialog_title">Редактировать станцию</string>
+
+    <string name="station_exists_message">Станция уже существует!</string>
+
+</resources>

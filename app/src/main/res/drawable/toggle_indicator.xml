@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <inset android:insetLeft="@dimen/toggle_indicator_offset" android:insetRight="@dimen/toggle_indicator_offset">
+            <shape android:shape="oval">
+                <solid
+                    android:color="@color/base_color"/>
+                <size
+                    android:width="@dimen/toggle_indicator_width"
+                    android:height="@dimen/toggle_indicator_height"/>
+            </shape>
+        </inset>
+    </item>
+    <item android:state_checked="false">
+        <inset android:insetLeft="@dimen/toggle_indicator_offset" android:insetRight="@dimen/toggle_indicator_offset">
+            <shape android:shape="oval">
+                <solid
+                    android:color="@color/text_additional_color"/>
+                <size
+                    android:width="@dimen/toggle_indicator_width"
+                    android:height="@dimen/toggle_indicator_height"/>
+            </shape>
+        </inset>
+    </item>
+</selector>

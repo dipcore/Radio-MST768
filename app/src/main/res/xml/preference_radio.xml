@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.dipcore.radio.ui.DynamicSummaryListPreference
+        android:key="pref_key_radio_region_id"
+        android:title="@string/pref_title_radio_region"
+        android:summary="%s"
+        android:defaultValue="0"
+        android:entries="@array/pref_radio_region_list_titles"
+        android:entryValues="@array/pref_radio_region_list_values" />
+    <SwitchPreference
+        android:key="pref_key_radio_enable_am"
+        android:summary="@string/pref_summary_radio_enable_am"
+        android:title="@string/pref_title_radio_enable_am"
+        android:defaultValue="true"
+        />
+    <SwitchPreference
+        android:key="pref_key_radio_enable_rds"
+        android:summary="@string/pref_summary_radio_enable_rds"
+        android:title="@string/pref_title_radio_enable_rds"
+        android:defaultValue="true"
+        />
+</PreferenceScreen>

@@ -1,0 +1,121 @@
+<resources>
+
+    <string name="title_activity_settings">Настройки</string>
+
+    <string name="title_about_settings">О приложении</string>
+
+    <string name="title_radio_settings">Настройки радио</string>
+
+    <string name="pref_title_radio_region">Регион радио</string>
+    <string-array name="pref_radio_region_list_titles">
+        <item>Китай</item>
+        <item>Европа</item>
+        <item>США</item>
+        <item>Юго-Восточная Азия</item>
+        <item>Южная Америка</item>
+        <item>Восточная Европа</item>
+        <item>Япония</item>
+    </string-array>
+    <string-array name="pref_radio_region_list_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string name="pref_title_radio_enable_am">AM диапазон</string>
+    <string name="pref_summary_radio_enable_am">Использовать AM диапазон</string>
+    <string name="pref_title_radio_enable_rds">RDS</string>
+    <string name="pref_summary_radio_enable_rds">Отображать RDS</string>
+
+    <string name="title_ui_settings">Интерфейс пользователя</string>
+
+    <string name="pref_title_ui_radio_interface">Приложение</string>
+    <string name="pref_title_ui_background">Фон приложения</string>
+    <string-array name="pref_title_ui_background_titles">
+        <item>Абстракный 1</item>
+        <item>Абстракный 2</item>
+        <item>Абстракный 3</item>
+        <item>Обои (требуется перезапуск)</item>
+        <item>Сплошной цвет</item>
+        <item>Произвольная картинка</item>
+    </string-array>
+    <string-array name="pref_title_ui_background_values">
+        <item>abstract1</item>
+        <item>abstract2</item>
+        <item>abstract3</item>
+        <item>$$wallpaper</item>
+        <item>$$solid</item>
+        <item>$$custom</item>
+    </string-array>
+    <string name="pref_title_ui_grid_view">Список станций</string>
+    <string-array name="pref_title_ui_grid_view_titles">
+        <item>Сетка 2x3</item>
+        <item>Сетка 2x4</item>
+        <item>Сетка 2x5</item>
+        <item>Сетка 3x3</item>
+        <item>Сетка 3x4</item>
+        <item>Сетка 3x5</item>
+    </string-array>
+    <string-array name="pref_title_ui_grid_view_values">
+        <item>2x3</item>
+        <item>2x4</item>
+        <item>2x5</item>
+        <item>3x3</item>
+        <item>3x4</item>
+        <item>3x5</item>
+    </string-array>
+
+    <string name="pref_title_ui_grid_view_font_size">Размер шрифта в списке станций</string>
+
+    <string name="pref_title_ui_top_bar_notifications">Иконка и нотификации в верхней панели</string>
+    <string name="pref_title_ui_display_top_bar_notification">Отображать иконку и нотификацию</string>
+    <string name="pref_title_ui_display_top_bar_notification_summary">Требуется перезапуск приложения</string>
+
+    <string name="pref_title_ui_freq_bar_visibility">Частотная шкала</string>
+    <string name="pref_title_ui_freq_bar_visibility_summary">Отображать частотную шкалу</string>
+
+    <string name="pref_title_ui_toggle_full_view">Полноэкранный режим</string>
+    <string name="pref_title_ui_toggle_full_view_summary">Переключаться в полноэкранный режим через 30 сек неактивности</string>
+
+    <string name="pref_title_ui_toast_notifications">Нотификации</string>
+    <string name="pref_title_ui_display_toasts">Отображать информацию о станции в нотификациях</string>
+    <string name="pref_title_ui_station_info_toasts_position">Положение</string>
+    <string-array name="pref_title_ui_station_info_toasts_position_titles">
+        <item>Сверху</item>
+        <item>По центру</item>
+        <item>Внизу</item>
+    </string-array>
+    <string-array name="pref_title_ui_station_info_toasts_position_values">
+        <item>top_center</item>
+        <item>middle_center</item>
+        <item>bottom_center</item>
+    </string-array>
+    <string name="pref_title_ui_station_info_toasts_duration">Длительность</string>
+    <string-array name="pref_title_ui_station_info_toasts_duration_titles">
+        <item>Долгая</item>
+        <item>Короткая</item>
+    </string-array>
+    <string-array name="pref_title_ui_station_info_toasts_duration_values">
+        <item>long</item>
+        <item>short</item>
+    </string-array>
+    <string name="pref_title_ui_station_info_toasts_transparency">Прозрачность фона</string>
+
+    <string name="title_key_settings">Настройки кнопок</string>
+    <string name="pref_title_key_navigation_keys">Навигационные кнопки</string>
+    <string name="pref_dialog_title_key_list_of_key_codes">Список кодов разделенный запятой</string>
+    <string name="pref_title_key_next_station">Следующая станция</string>
+    <string name="pref_title_key_prev_station">Предыдущая станция</string>
+    <string name="pref_title_key_numeric_keys">Цифровые кнопки</string>
+    <string name="pref_title_key_station_1">Станция #1</string>
+    <string name="pref_title_key_station_2">Станция #2</string>
+    <string name="pref_title_key_station_3">Станция #3</string>
+    <string name="pref_title_key_station_4">Станция #4</string>
+    <string name="pref_title_key_station_5">Станция #5</string>
+    <string name="pref_title_key_station_6">Станция #6</string>
+
+
+</resources>
