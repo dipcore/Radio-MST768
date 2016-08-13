@@ -63,6 +63,8 @@ public class RadioService extends Service implements Radio.NoticeListener {
     // KeyCodes
     private ArrayList<KeyCode> nextKeyCodes = null;
     private ArrayList<KeyCode> prevKeyCodes = null;
+    private ArrayList<KeyCode> seekNextKeyCodes = null;
+    private ArrayList<KeyCode> seekPrevKeyCodes = null;
     private ArrayList<ArrayList<KeyCode>> stationKeyCodes = new ArrayList<>();
 
 
@@ -233,6 +235,8 @@ public class RadioService extends Service implements Radio.NoticeListener {
         // Key codes
         nextKeyCodes = mPreferences.getKeyCodes("next_station", "19");
         prevKeyCodes = mPreferences.getKeyCodes("prev_station", "21");
+        seekNextKeyCodes = mPreferences.getKeyCodes("seek_next_station", "19L");
+        seekPrevKeyCodes = mPreferences.getKeyCodes("seek_prev_station", "21L");
         stationKeyCodes.add(mPreferences.getKeyCodes("station_1", "49"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_2", "50"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_3", "51"));
@@ -546,6 +550,19 @@ public class RadioService extends Service implements Radio.NoticeListener {
                 prevStation();
             }
         }
+        // Seek next station
+        for (KeyCode kc: seekNextKeyCodes){
+            if (kc.code == code && kc.duration == duration) {
+                seekNextStation();
+            }
+        }
+        // Seek prev station
+        for (KeyCode kc: seekPrevKeyCodes){
+            if (kc.code == code && kc.duration == duration) {
+                seekPrevStation();
+            }
+        }
+
         // Stations
         for (int i = 0; i < stationKeyCodes.size(); i++) {
             for (KeyCode kc : stationKeyCodes.get(i)) {

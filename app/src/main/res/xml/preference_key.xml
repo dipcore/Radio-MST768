@@ -13,6 +13,16 @@
             android:key="pref_key_prev_station"
             android:defaultValue="21" />
 
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_seek_next_station"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_seek_next_station"
+            android:defaultValue="19L" />
+
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_seek_prev_station"
+            android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
+            android:key="pref_key_seek_prev_station"
+            android:defaultValue="21L" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_title_key_numeric_keys">

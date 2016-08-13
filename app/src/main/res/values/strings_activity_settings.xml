@@ -112,6 +112,8 @@
     <string name="pref_dialog_title_key_list_of_key_codes">Comma-separated list of key codes</string>
     <string name="pref_title_key_next_station">Next Station</string>
     <string name="pref_title_key_prev_station">Prev Station</string>
+    <string name="pref_title_key_seek_next_station">Seek Next Station</string>
+    <string name="pref_title_key_seek_prev_station">Seek Prev Station</string>
     <string name="pref_title_key_numeric_keys">Numeric keys</string>
     <string name="pref_title_key_station_1">Station #1</string>
     <string name="pref_title_key_station_2">Station #2</string>

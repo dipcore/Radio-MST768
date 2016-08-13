@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Radio-MST768.iml" filepath="$PROJECT_DIR$/Radio-MST768.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/radio.iml" filepath="$PROJECT_DIR$/radio.iml" />
     </modules>
   </component>
 </project>
