@@ -13,7 +13,7 @@
     <color name="bottom_bar_bg_color">#DD000000</color>
 
     <color name="top_bar_border">@color/divider_color</color>
-    <color name="top_bar_bg_color">#DD000000</color>
+    <color name="top_bar_bg_color">#30000000</color>
 
     <color name="station_list_bar_divider">@color/divider_color</color>
     <color name="station_list_bar_bg_color">#AA000000</color>
