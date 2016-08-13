@@ -109,6 +109,8 @@
     <string name="pref_dialog_title_key_list_of_key_codes">Список кодов разделенный запятой</string>
     <string name="pref_title_key_next_station">Следующая станция</string>
     <string name="pref_title_key_prev_station">Предыдущая станция</string>
+    <string name="pref_title_key_seek_next_station">Поиск следующей станции</string>
+    <string name="pref_title_key_seek_prev_station">Потск предыдущей станции</string>
     <string name="pref_title_key_numeric_keys">Цифровые кнопки</string>
     <string name="pref_title_key_station_1">Станция #1</string>
     <string name="pref_title_key_station_2">Станция #2</string>
