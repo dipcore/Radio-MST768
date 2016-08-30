@@ -133,13 +133,18 @@ public class RadioSharedPreferences {
         try {
             for (String str : keyCodesString.split(",")) {
                 String[] parts = str.split("L");
-                int duration = str.toLowerCase().contains("l") ? 2 : 1; // Long = 1, short =1
-                result.add(new KeyCode(Integer.valueOf(parts[0]), duration));
+                int keyCode = Integer.valueOf(parts[0]);
+                int duration = str.contains("L") ? 2 : 1; // Long = 2, Short = 1
+                result.add(new KeyCode(keyCode, duration));
             }
         } catch (Error e) {
 
         }
         return result;
+    }
+
+    public boolean isKeyCodeDebuggingEnabled(){
+        return sharedPreferences.getBoolean("pref_key_display_keycode", false);
     }
 
     public boolean isTopBarNotificationsEnabled(){

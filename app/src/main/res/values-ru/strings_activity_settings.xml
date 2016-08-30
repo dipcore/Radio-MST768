@@ -110,7 +110,7 @@
     <string name="pref_title_key_next_station">Следующая станция</string>
     <string name="pref_title_key_prev_station">Предыдущая станция</string>
     <string name="pref_title_key_seek_next_station">Поиск следующей станции</string>
-    <string name="pref_title_key_seek_prev_station">Потск предыдущей станции</string>
+    <string name="pref_title_key_seek_prev_station">Поиск предыдущей станции</string>
     <string name="pref_title_key_numeric_keys">Цифровые кнопки</string>
     <string name="pref_title_key_station_1">Станция #1</string>
     <string name="pref_title_key_station_2">Станция #2</string>
@@ -119,5 +119,9 @@
     <string name="pref_title_key_station_5">Станция #5</string>
     <string name="pref_title_key_station_6">Станция #6</string>
 
+    <string name="pref_title_key_misc">Разное</string>
+    <string name="pref_title_key_auto_scan">Auto scan</string>
+    <string name="pref_title_key_display_keycode">Отображать коды кнопок</string>
+    <string name="pref_summary_key_display_keycode">Отображать все коды кнопок и биндинги</string>
 
 </resources>

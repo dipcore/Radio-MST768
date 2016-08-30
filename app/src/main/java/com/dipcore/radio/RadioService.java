@@ -61,11 +61,13 @@ public class RadioService extends Service implements Radio.NoticeListener {
     private boolean started = false;
 
     // KeyCodes
+    private boolean isKeyCodeDebuggingEnabled = false;
     private ArrayList<KeyCode> nextKeyCodes = null;
     private ArrayList<KeyCode> prevKeyCodes = null;
     private ArrayList<KeyCode> seekNextKeyCodes = null;
     private ArrayList<KeyCode> seekPrevKeyCodes = null;
     private ArrayList<ArrayList<KeyCode>> stationKeyCodes = new ArrayList<>();
+    private ArrayList<KeyCode> autoScanKeyCodes = null;
 
 
     public RadioService() {
@@ -233,16 +235,18 @@ public class RadioService extends Service implements Radio.NoticeListener {
         mIndexes = mPreferences.getIndexes();
 
         // Key codes
+        isKeyCodeDebuggingEnabled = mPreferences.isKeyCodeDebuggingEnabled();
         nextKeyCodes = mPreferences.getKeyCodes("next_station", "19");
         prevKeyCodes = mPreferences.getKeyCodes("prev_station", "21");
-        seekNextKeyCodes = mPreferences.getKeyCodes("seek_next_station", "19L");
-        seekPrevKeyCodes = mPreferences.getKeyCodes("seek_prev_station", "21L");
+        seekNextKeyCodes = mPreferences.getKeyCodes("seek_next_station", "0");
+        seekPrevKeyCodes = mPreferences.getKeyCodes("seek_prev_station", "0");
         stationKeyCodes.add(mPreferences.getKeyCodes("station_1", "49"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_2", "50"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_3", "51"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_4", "52"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_5", "53"));
         stationKeyCodes.add(mPreferences.getKeyCodes("station_6", "54"));
+        autoScanKeyCodes = mPreferences.getKeyCodes("auto_scan", "0");
     }
 
     /**
@@ -538,28 +542,35 @@ public class RadioService extends Service implements Radio.NoticeListener {
      * @param duration
      */
     public void onKeyPress(int code, int duration) {
+
+        String msg = Integer.toString(code) + (duration == 2?"L":"");
+
         // Next station
         for (KeyCode kc: nextKeyCodes){
             if (kc.code == code && kc.duration == duration) {
                 nextStation();
+                msg += " nextStation()";
             }
         }
         // Prev station
         for (KeyCode kc: prevKeyCodes){
             if (kc.code == code && kc.duration == duration) {
                 prevStation();
+                msg += " prevStation()";
             }
         }
         // Seek next station
         for (KeyCode kc: seekNextKeyCodes){
             if (kc.code == code && kc.duration == duration) {
                 seekNextStation();
+                msg += " seekNextStation()";
             }
         }
         // Seek prev station
         for (KeyCode kc: seekPrevKeyCodes){
             if (kc.code == code && kc.duration == duration) {
                 seekPrevStation();
+                msg += " seekPrevStation()";
             }
         }
 
@@ -570,10 +581,25 @@ public class RadioService extends Service implements Radio.NoticeListener {
                     int size = getStationList().size();
                     if (size >= i) {
                         setStation(i, getStationList().get(i));
+                        msg += " setStation()";
                     }
                 }
             }
         }
+
+        // Auto scan
+        for (KeyCode kc: autoScanKeyCodes){
+            if (kc.code == code && kc.duration == duration) {
+                autoScan();
+                msg += " autoScan()";
+            }
+        }
+
+        // Debugging
+        if (isKeyCodeDebuggingEnabled) {
+            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     /**

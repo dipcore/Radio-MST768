@@ -16,12 +16,12 @@
         <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_seek_next_station"
             android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
             android:key="pref_key_seek_next_station"
-            android:defaultValue="19L" />
+            android:defaultValue="0" />
 
         <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_seek_prev_station"
             android:dialogTitle="@string/pref_dialog_title_key_list_of_key_codes"
             android:key="pref_key_seek_prev_station"
-            android:defaultValue="21L" />
+            android:defaultValue="0" />
 
     </PreferenceCategory>
 
@@ -62,6 +62,19 @@
             android:key="pref_key_station_6"
             android:defaultValue="54" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_key_misc">
+        <com.dipcore.radio.ui.DynamicSummaryEditTextPreference android:title="@string/pref_title_key_station_6"
+            android:dialogTitle="@string/pref_title_key_auto_scan"
+            android:key="pref_key_auto_scan"
+            android:defaultValue="84" />
+        <SwitchPreference
+            android:key="pref_key_display_keycode"
+            android:summary="@string/pref_summary_key_display_keycode"
+            android:title="@string/pref_title_key_display_keycode"
+            android:defaultValue="false"
+            />
     </PreferenceCategory>
 
 </PreferenceScreen>

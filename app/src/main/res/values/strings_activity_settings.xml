@@ -121,6 +121,8 @@
     <string name="pref_title_key_station_4">Station #4</string>
     <string name="pref_title_key_station_5">Station #5</string>
     <string name="pref_title_key_station_6">Station #6</string>
-
-
+    <string name="pref_title_key_misc">Misc</string>
+    <string name="pref_title_key_auto_scan">Auto scan</string>
+    <string name="pref_title_key_display_keycode">Display Keycodes</string>
+    <string name="pref_summary_key_display_keycode">Display all received keycodes and bindings</string>
 </resources>
